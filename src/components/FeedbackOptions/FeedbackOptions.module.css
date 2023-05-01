@@ -1,0 +1,14 @@
+.containerBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.button {
+    width: 80px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5%;
+}

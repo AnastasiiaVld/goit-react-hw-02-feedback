@@ -1,0 +1,13 @@
+.div {
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+}
+
+.span {
+    border: solid 1px;
+    padding: 10px;
+    box-shadow: 10px 5px 5px purple;
+    border-radius: 5%;
+}
