@@ -2,6 +2,7 @@ import { Component } from "react";
 import { Statistics } from "./Statistics/Statistics";
 import { FeedbackOptions } from "./FeedbackOptions/FeedbackOptions";
 import { Sections } from "./Section/Section";
+import { Notification } from "components/Notification/Notification";
 
 const feedbackStatusName = ["good", "neutral", "bad"]
 
@@ -18,6 +19,7 @@ export class App extends Component{
   }
 
   render() {
+    const hasFeedback = Object.values(this.state).some(item => item > 0)
     return (
      <div>
           <Sections title="Please leave feedback"/>
@@ -26,10 +28,10 @@ export class App extends Component{
           onButtonClick={this.handleClick}
         /> 
             <Sections title="Statistics"/>
-        <Statistics
+        {hasFeedback ? <Statistics
           options={feedbackStatusName}
           state = {this.state}
-        />
+        /> :(<Notification message= "There is no feedback"/>)}
         </div>
         )
   }
